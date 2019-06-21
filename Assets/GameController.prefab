@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276883280660042085}
+  - component: {fileID: 4499264960545467876}
+  - component: {fileID: 7994732557128391334}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -30,3 +32,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4499264960545467876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499264960545467875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7181c16313243e242ab2a556e5fce8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllableCharacters: []
+--- !u!114 &7994732557128391334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499264960545467875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f010934749b58f44aa2b764a7216902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultTimeScale: 1
+  _pauseKey: 27
