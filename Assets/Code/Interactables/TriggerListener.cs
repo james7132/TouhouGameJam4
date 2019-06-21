@@ -4,8 +4,11 @@ using UnityEngine;
 
 public abstract class TriggerListener : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField]
     List<TriggerBehaviour> _triggers;
+    #pragma warning restore 0649
+
     public IReadOnlyCollection<TriggerBehaviour> Triggers => _triggers;
 
     void OnEnable() 

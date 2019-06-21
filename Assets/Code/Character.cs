@@ -12,6 +12,9 @@ public class Character : MonoBehaviour
 
     [SerializeField]
     Vector2 _interactionBoxOffset;
+
+    [SerializeField]
+    GameObject[] _enabledOnSelect;
     #pragma warning restore 0649
 
     HashSet<Collider2D> _characterColliders;
@@ -23,6 +26,7 @@ public class Character : MonoBehaviour
     void Start() 
     {
         _characterColliders = new HashSet<Collider2D>(GetComponentsInChildren<Collider2D>());
+        SetEnabledObjects(false);
     }
 
     /// <summary>
@@ -64,12 +68,21 @@ public class Character : MonoBehaviour
 
     public virtual void Select() 
     {
-        // TODO(james7132): Properly implement
+        SetEnabledObjects(true);
     }
 
     public virtual void Deselect() 
     {
-        // TODO(james7132): Properly implement
+        SetEnabledObjects(false);
+    }
+
+    void SetEnabledObjects(bool state) 
+    {
+        foreach (var obj in _enabledOnSelect) 
+        {
+            if (obj == null) continue;
+            obj.SetActive(state);
+        }
     }
 
 }

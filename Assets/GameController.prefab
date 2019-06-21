@@ -47,7 +47,9 @@ MonoBehaviour:
   _horizontalAxis: Horizontal
   _verticalAxis: Vertical
   _changeCharactersButton: ChangeCharacters
-  _controllableCharacters: []
+  _controllableCharacters:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &7994732557128391334
 MonoBehaviour:
   m_ObjectHideFlags: 0

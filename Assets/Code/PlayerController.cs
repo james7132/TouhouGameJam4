@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void Start() 
+    {
+        if (CurrentCharacter == null) return;
+        CurrentCharacter.Select();
+    }
+
     void Update() 
     {
         if (Input.GetButtonDown(_changeCharactersButton)) 
