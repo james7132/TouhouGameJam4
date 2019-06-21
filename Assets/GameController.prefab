@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7181c16313243e242ab2a556e5fce8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _horizontalAxis: Horizontal
+  _verticalAxis: Vertical
+  _changeCharactersButton: ChangeCharacters
   _controllableCharacters: []
 --- !u!114 &7994732557128391334
 MonoBehaviour:
@@ -57,5 +60,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f010934749b58f44aa2b764a7216902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultTimeScale: 1
   _pauseKey: 27
+  _defaultTimeScale: 1

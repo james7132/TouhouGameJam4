@@ -62,4 +62,14 @@ public class Character : MonoBehaviour
         }
     }
 
+    public virtual void Select() 
+    {
+        // TODO(james7132): Properly implement
+    }
+
+    public virtual void Deselect() 
+    {
+        // TODO(james7132): Properly implement
+    }
+
 }
