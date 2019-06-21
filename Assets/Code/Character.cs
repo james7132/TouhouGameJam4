@@ -15,6 +15,9 @@ public class Character : MonoBehaviour
 
     [SerializeField]
     GameObject[] _enabledOnSelect;
+
+    [SerializeField]
+    float _movementSpeed = 5;
     #pragma warning restore 0649
 
     HashSet<Collider2D> _characterColliders;
@@ -35,7 +38,7 @@ public class Character : MonoBehaviour
     /// <param name="direction"></param>
     public void Move(Vector2 direction) 
     {
-        // TODO(james7132): Properly implement
+        transform.position += (Vector3)(direction.normalized * _movementSpeed * Time.deltaTime);
     }
 
     public void Jump() 
