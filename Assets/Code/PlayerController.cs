@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     string _changeCharactersButton = "ChangeCharacters";
     [SerializeField]
+    string _interactButton = "Interact";
+    [SerializeField]
     List<Character> _controllableCharacters;
 
     public IReadOnlyCollection<Character> ControllableCharacters => _controllableCharacters;
@@ -45,6 +47,10 @@ public class PlayerController : MonoBehaviour
             ChangeCharacters();
         }
         if (CurrentCharacter == null) return;
+        if (Input.GetButtonDown(_interactButton)) 
+        {
+            CurrentCharacter.Interact();
+        }
     }
 
     public void ChangeCharacters() 

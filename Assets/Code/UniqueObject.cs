@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UniqueObject : MonoBehaviour
 {
-    static HashSet<int> _existingObjects;
+    static HashSet<int> _existingObjects = new HashSet<int>();
 
     [SerializeField]
     int _id;

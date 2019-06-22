@@ -182,6 +182,7 @@ public class Character : MonoBehaviour
     /// </summary>
     public void Interact()
     {
+        Debug.Log($"{name} interacted.");
         Vector2 center = ((Vector2)transform.position) + _interactionBoxOffset;
         var interactables = Physics2D.OverlapBoxAll(center, _interactionBoxSize, 0)
                                      .Where(col => !_characterColliders.Contains(col))
