@@ -78,6 +78,7 @@ public class Character : MonoBehaviour
     HashSet<Collider2D> _characterColliders;
     public bool IsSelected { get; set; }
     HashSet<SpriteRenderer> _rigSpriteRenderers;
+    private Vector2 _movement;
 
     public bool IsGrounded => RaycastCollider(_groundCollider, _groundDetectionMask);
 
@@ -102,25 +103,30 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        var movement = IsSelected
+        _movement = IsSelected
                             ? new Vector2(Input.GetAxisRaw(_horizontalAxis),
                                    Input.GetAxisRaw(_verticalAxis))
                             : Vector2.zero;
 
-        if (movement.x != 0f)
-        {
-            // Stop if moving against a wall
-            var collider = movement.x > 0f ? _rightCollider : _leftCollider;
-            if (RaycastCollider(collider, _sideDetectionMask))
-                movement.x = 0f;
-        }
-        HandleMovement(movement);
-        if (Input.GetButtonDown(_verticalAxis) && movement.y > 0)
+        if (Input.GetButtonDown(_verticalAxis) && _movement.y > 0)
         {
             Jump();
         }
-        HandleAnimation(movement);
+        HandleAnimation(_movement);
     }
+
+    private void FixedUpdate()
+    {
+        if (_movement.x != 0f)
+        {
+            // Stop if moving against a wall
+            var collider = _movement.x > 0f ? _rightCollider : _leftCollider;
+            if (RaycastCollider(collider, _sideDetectionMask))
+                _movement.x = 0f;
+        }
+        HandleMovement(_movement);
+    }
+
 
     /// <summary>
     /// Moves the character in a particular direction.
