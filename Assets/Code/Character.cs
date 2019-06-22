@@ -107,6 +107,13 @@ public class Character : MonoBehaviour
                             ? new Vector2(Input.GetAxisRaw(_horizontalAxis),
                                    Input.GetAxisRaw(_verticalAxis))
                             : Vector2.zero;
+        if (_movement.x != 0f)
+        {
+            // Stop if moving against a wall
+            var collider = _movement.x > 0f ? _rightCollider : _leftCollider;
+            if (RaycastCollider(collider, _sideDetectionMask))
+                _movement.x = 0f;
+        }
 
         if (Input.GetButtonDown(_verticalAxis) && _movement.y > 0)
         {
@@ -117,13 +124,6 @@ public class Character : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_movement.x != 0f)
-        {
-            // Stop if moving against a wall
-            var collider = _movement.x > 0f ? _rightCollider : _leftCollider;
-            if (RaycastCollider(collider, _sideDetectionMask))
-                _movement.x = 0f;
-        }
         HandleMovement(_movement);
     }
 
