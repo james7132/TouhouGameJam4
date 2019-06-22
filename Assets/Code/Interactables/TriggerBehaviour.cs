@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-public class TriggerBehaviour : MonoBehaviour
+[DisallowMultipleComponent]
+public abstract class TriggerBehaviour : MonoBehaviour
 {
     public event Action<TriggerBehaviour, Character> OnTriggerFired;
 
