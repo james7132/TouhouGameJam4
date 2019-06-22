@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294059630107813746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.002, y: -0.292, z: 0}
+  m_LocalPosition: {x: -0.002, y: -0.251, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 9109388938365864307}
@@ -307,7 +307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9027663225046496713
 Transform:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103878054862559208}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -338,8 +338,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.51, y: -0.87}
-  - {x: 0.51, y: -0.87}
+  - {x: -0.35, y: -0.83}
+  - {x: 0.35, y: -0.83}
 --- !u!1 &4829680491104674698
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4078581864190164622
 Transform:
   m_ObjectHideFlags: 0
@@ -492,7 +492,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5336067893813711529}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -501,8 +501,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.55, y: -0.85}
-  - {x: 0.55, y: 0.85}
+  - {x: 0.4, y: -0.7}
+  - {x: 0.4, y: 0.7}
 --- !u!1 &5423964530035514308
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2143484747630698878
 Transform:
   m_ObjectHideFlags: 0
@@ -652,7 +652,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6006029903180794958}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -661,8 +661,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.55, y: -0.85}
-  - {x: -0.55, y: 0.85}
+  - {x: -0.4, y: -0.7}
+  - {x: -0.4, y: 0.7}
 --- !u!1 &6144800717538290672
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +927,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.5}
+  m_Size: {x: 0.55, y: 1.42}
   m_EdgeRadius: 0.1
 --- !u!50 &-501823743815618313
 Rigidbody2D:
