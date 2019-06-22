@@ -85,7 +85,6 @@ public class Character : MonoBehaviour
 
     public void Jump()
     {
-        print("boop");
         if (IsGrounded)
             _rb2d.AddForce(Vector2.up * _jumpForce);
     }
