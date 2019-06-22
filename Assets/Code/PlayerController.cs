@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     List<Character> _controllableCharacters;
 
+    public IReadOnlyCollection<Character> ControllableCharacters => _controllableCharacters;
+
     int _currentIndex = 0;
     public Character CurrentCharacter 
     {
