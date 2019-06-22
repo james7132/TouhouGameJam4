@@ -265,7 +265,13 @@ MonoBehaviour:
   _movementDecAir: 0
   _maxMoveSpeed: 5
   _jumpForce: 350
-  _rb2d: {fileID: 0}
+  _rigAnimator: {fileID: 0}
+  _speedFloat: Speed
+  _runningBool: Running
+  _JumpStateInt: JumpState
+  _turnAroundBool: Turn
+  _speedFloatWarmupAcc: 2
+  _speedFloatWarmupDec: 5
   _hitboxCollider: {fileID: 0}
 --- !u!61 &5296203733680438877
 BoxCollider2D:
