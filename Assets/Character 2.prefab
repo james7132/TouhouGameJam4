@@ -432,7 +432,7 @@ MonoBehaviour:
   _movementDec: 50
   _movementDecAir: 0
   _maxMoveSpeed: 5
-  _jumpForce: 350
+  _jumpForce: 60
   _groundDetectionMask:
     serializedVersion: 2
     m_Bits: 257
@@ -489,7 +489,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
