@@ -131,13 +131,26 @@ public class StartOptions : MonoBehaviour {
         while (elapsedTime < totalDuration)
         {
             elapsedTime += Time.deltaTime;
-            float currentAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / totalDuration);
+            float currentAlpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / (totalDuration * 2));
             canvasGroupToFadeAlpha.alpha = currentAlpha;
             yield return null;
         }
 
         HideDelayed();
         Debug.Log("Coroutine done. Game started in same scene! Put your game starting stuff here.");
+
+        elapsedTime = 0f;
+        totalDuration = menuSettingsData.menuFadeTime;
+
+        while (elapsedTime < totalDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float currentAlpha = Mathf.Lerp(endAlpha, startAlpha, elapsedTime / (totalDuration * 2));
+            canvasGroupToFadeAlpha.alpha = currentAlpha;
+            yield return null;
+        }
+
+		Destroy(gameObject);
     }
 
 
