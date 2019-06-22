@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &95860767360684110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7917382221815326462}
+  - component: {fileID: 7438851587831405778}
+  m_Layer: 8
+  m_Name: Left Wall Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7917382221815326462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95860767360684110}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.84, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5296203733680438878}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &7438851587831405778
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95860767360684110}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.55, y: -0.85}
+  - {x: -0.55, y: 0.85}
 --- !u!1 &123422398387809684
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7850173614102810732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +81,55 @@ Transform:
   m_Father: {fileID: 2121571419377447444}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1051568184611700689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7043314781051738409}
+  - component: {fileID: 6639270399860743778}
+  m_Layer: 8
+  m_Name: Floor Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7043314781051738409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051568184611700689}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.84, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5296203733680438878}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &6639270399860743778
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051568184611700689}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.51, y: -0.87}
+  - {x: 0.51, y: -0.87}
 --- !u!1 &1819284457890965810
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1462326205494302798}
   - component: {fileID: 5353200127521566757}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,55 +210,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2829087701438759428
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8152421386986601612}
-  - component: {fileID: 7985488925536794402}
-  m_Layer: 0
-  m_Name: Floor Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8152421386986601612
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2829087701438759428}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5296203733680438878}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &7985488925536794402
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2829087701438759428}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.51, y: -0.85}
-  - {x: 0.51, y: -0.85}
 --- !u!1 &3150034325180945165
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128576747876009940}
   - component: {fileID: 7349770896446815481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,14 +234,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3150034325180945165}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.069, y: -0.233, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 2121571419377447444}
   - {fileID: 8998164005715172903}
   m_Father: {fileID: 5296203733680438878}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &7349770896446815481
 Animator:
@@ -223,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4137137786199039737}
   - component: {fileID: 4309004278712723738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5167005094378948572}
   - component: {fileID: 975275090488504505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2121571419377447444}
   - component: {fileID: 6305689066595047239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7715805430133743360}
   - component: {fileID: 3624002768193723591}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +533,7 @@ Transform:
   m_LocalScale: {x: 3, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 5296203733680438878}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3624002768193723591
 SpriteRenderer:
@@ -544,7 +593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5296203732975774023}
   - component: {fileID: 5296203732975774017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SelectedBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +674,7 @@ GameObject:
   - component: {fileID: 5296203733680438879}
   - component: {fileID: 5296203733680438877}
   - component: {fileID: 3548878195196897835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +693,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5296203732975774023}
-  - {fileID: 8152421386986601612}
+  - {fileID: 7043314781051738409}
+  - {fileID: 7917382221815326462}
+  - {fileID: 5311875396721109871}
   - {fileID: 7715805430133743360}
   - {fileID: 128576747876009940}
   m_Father: {fileID: 0}
@@ -674,7 +725,10 @@ MonoBehaviour:
   _movementDecAir: 0
   _maxMoveSpeed: 5
   _jumpForce: 350
-  groundDetectionMask:
+  _groundDetectionMask:
+    serializedVersion: 2
+    m_Bits: 257
+  _sideDetectionMask:
     serializedVersion: 2
     m_Bits: 1
   _rigAnimator: {fileID: 0}
@@ -686,7 +740,9 @@ MonoBehaviour:
   _speedFloatWarmupDec: 5
   _selectColor: {r: 1, g: 1, b: 1, a: 1}
   _deselectColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  _hitboxCollider: {fileID: 0}
+  _groundCollider: {fileID: 6639270399860743778}
+  _leftCollider: {fileID: 7438851587831405778}
+  _rightCollider: {fileID: 903459522546491673}
 --- !u!61 &5296203733680438877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -711,8 +767,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.6}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.86, y: 1.5}
+  m_EdgeRadius: 0.1
 --- !u!50 &3548878195196897835
 Rigidbody2D:
   serializedVersion: 4
@@ -744,7 +800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8720122077313977141}
   - component: {fileID: 5296218126921112243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,6 +870,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5841084107167925125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5311875396721109871}
+  - component: {fileID: 903459522546491673}
+  m_Layer: 8
+  m_Name: Right Wall Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5311875396721109871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841084107167925125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.84, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5296203733680438878}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &903459522546491673
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841084107167925125}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.55, y: -0.85}
+  - {x: 0.55, y: 0.85}
 --- !u!1 &7931103136756823025
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8998164005715172903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2769474461898862472}
   - component: {fileID: 3753364901617843152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

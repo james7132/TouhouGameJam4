@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4249675257826711986}
   - component: {fileID: 7179813137896663001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9173120279840109490}
   - component: {fileID: 910133959034893617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,14 +105,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294059630107813746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.069, y: -0.233, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 2243740495227641733}
   - {fileID: 1224722549673426915}
   m_Father: {fileID: 6339623295360769404}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &910133959034893617
 Animator:
   serializedVersion: 3
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2533295588659097570}
   - component: {fileID: 7482476369590235480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3682159304968600491}
   - component: {fileID: 4029951887851279086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9027663225046496713}
   - component: {fileID: 5973030312354984719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,8 +339,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.51, y: -0.85}
-  - {x: 0.51, y: -0.85}
+  - {x: -0.51, y: -0.87}
+  - {x: 0.51, y: -0.87}
 --- !u!1 &4829680491104674698
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2243740495227641733}
   - component: {fileID: 4756920381799789531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1224722549673426915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,6 +455,55 @@ Transform:
   m_Father: {fileID: 9173120279840109490}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5336067893813711529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4078581864190164622}
+  - component: {fileID: 353490709179544706}
+  m_Layer: 8
+  m_Name: Right Wall Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4078581864190164622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336067893813711529}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6339623295360769404}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &353490709179544706
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336067893813711529}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.55, y: -0.85}
+  - {x: 0.55, y: 0.85}
 --- !u!1 &5423964530035514308
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4921430344160546868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8222171667035758128}
   - component: {fileID: 7293440574992388103}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,6 +615,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6006029903180794958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2143484747630698878}
+  - component: {fileID: 7861774039966991684}
+  m_Layer: 8
+  m_Name: Left Wall Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2143484747630698878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006029903180794958}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6339623295360769404}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &7861774039966991684
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006029903180794958}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.55, y: -0.85}
+  - {x: -0.55, y: 0.85}
 --- !u!1 &6144800717538290672
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 281359480911763181}
   - component: {fileID: 7634950768240299360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6339623294517487543}
   - component: {fileID: 6339623294517487545}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SelectedBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +835,7 @@ GameObject:
   - component: {fileID: 6339623295360769403}
   - component: {fileID: 6339623295360769405}
   - component: {fileID: -501823743815618313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,6 +856,8 @@ Transform:
   - {fileID: 6339623294517487543}
   - {fileID: 8222171667035758128}
   - {fileID: 9027663225046496713}
+  - {fileID: 2143484747630698878}
+  - {fileID: 4078581864190164622}
   - {fileID: 9173120279840109490}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -786,7 +886,10 @@ MonoBehaviour:
   _movementDecAir: 0
   _maxMoveSpeed: 5
   _jumpForce: 350
-  groundDetectionMask:
+  _groundDetectionMask:
+    serializedVersion: 2
+    m_Bits: 257
+  _sideDetectionMask:
     serializedVersion: 2
     m_Bits: 1
   _rigAnimator: {fileID: 0}
@@ -798,7 +901,9 @@ MonoBehaviour:
   _speedFloatWarmupDec: 5
   _selectColor: {r: 1, g: 1, b: 1, a: 1}
   _deselectColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  _hitboxCollider: {fileID: 0}
+  _groundCollider: {fileID: 5973030312354984719}
+  _leftCollider: {fileID: 7861774039966991684}
+  _rightCollider: {fileID: 353490709179544706}
 --- !u!61 &6339623295360769405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -823,8 +928,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.6}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.86, y: 1.5}
+  m_EdgeRadius: 0.1
 --- !u!50 &-501823743815618313
 Rigidbody2D:
   serializedVersion: 4
@@ -856,7 +961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6285342527241759345}
   - component: {fileID: 3867059736951892186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

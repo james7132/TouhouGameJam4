@@ -36,7 +36,9 @@ public class Character : MonoBehaviour
     [SerializeField]
     float _jumpForce = 5;
     [SerializeField]
-    LayerMask groundDetectionMask;
+    LayerMask _groundDetectionMask;
+    [SerializeField]
+    LayerMask _sideDetectionMask;
 
     [Header("Animation")]
     [SerializeField]
@@ -60,8 +62,14 @@ public class Character : MonoBehaviour
     [SerializeField]
     private Color _deselectColor;
 
+
+    [Header("Collision Detectors")]
     [SerializeField]
-    private EdgeCollider2D _hitboxCollider;
+    private EdgeCollider2D _groundCollider;
+    [SerializeField]
+    private EdgeCollider2D _leftCollider;
+    [SerializeField]
+    private EdgeCollider2D _rightCollider;
 
 #pragma warning restore 0649
 
@@ -71,25 +79,21 @@ public class Character : MonoBehaviour
     public bool IsSelected { get; set; }
     HashSet<SpriteRenderer> _rigSpriteRenderers;
 
-    public bool IsGrounded
-    {
-        get
-        {
-            var startPoint = (Vector2)transform.position + _hitboxCollider.points[0];
-            var raycastVector = _hitboxCollider.points[1] - _hitboxCollider.points[0];
-            Debug.DrawLine(startPoint, startPoint + raycastVector);
-            var result = Physics2D.Raycast(startPoint, raycastVector.normalized, raycastVector.magnitude, groundDetectionMask);
-            return result;
-        }
-    }
+    public bool IsGrounded => RaycastCollider(_groundCollider, _groundDetectionMask);
 
+    public bool RaycastCollider(EdgeCollider2D collider, LayerMask raycastMask)
+    {
+        var startPoint = (Vector2)transform.position + collider.points[0];
+        var raycastVector = collider.points[1] - collider.points[0];
+        Debug.DrawLine(startPoint, startPoint + raycastVector);
+        var result = Physics2D.Raycast(startPoint, raycastVector.normalized, raycastVector.magnitude, raycastMask);
+        return result;
+    }
     
     void Awake()
     {
         _characterColliders = new HashSet<Collider2D>(GetComponentsInChildren<Collider2D>());
         _rb2d = GetComponent<Rigidbody2D>();
-        if (_hitboxCollider == null)
-            _hitboxCollider = GetComponentInChildren<EdgeCollider2D>();
         if (_rigAnimator == null)
             _rigAnimator = GetComponentInChildren<Animator>();
         _rigSpriteRenderers = new HashSet<SpriteRenderer>(_rigAnimator.GetComponentsInChildren<SpriteRenderer>());
@@ -102,6 +106,14 @@ public class Character : MonoBehaviour
                             ? new Vector2(Input.GetAxisRaw(_horizontalAxis),
                                    Input.GetAxisRaw(_verticalAxis))
                             : Vector2.zero;
+
+        if (movement.x != 0f)
+        {
+            // Stop if moving against a wall
+            var collider = movement.x > 0f ? _rightCollider : _leftCollider;
+            if (RaycastCollider(collider, _sideDetectionMask))
+                movement.x = 0f;
+        }
         HandleMovement(movement);
         if (Input.GetButtonDown(_verticalAxis) && movement.y > 0)
         {
@@ -206,7 +218,6 @@ public class Character : MonoBehaviour
 
     void SetSpriteSelectedColors(bool selected)
     {
-        print(name + " " + selected);
         foreach (var spr in _rigSpriteRenderers)
         {
             spr.color = selected ? _selectColor : _deselectColor;
