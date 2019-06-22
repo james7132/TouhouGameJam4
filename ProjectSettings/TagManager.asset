@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Seija
+    uniqueID: 2783676939
+    locked: 0

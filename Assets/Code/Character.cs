@@ -30,13 +30,25 @@ public class Character : MonoBehaviour
     float _jumpForce = 5;
 
     [SerializeField]
-    private Rigidbody2D _rb2d;
+    private Animator _rigAnimator;
+    [SerializeField]
+    private string _speedFloat = "Speed";
+    [SerializeField]
+    private string _runningBool = "Running";
+    [SerializeField]
+    private float _speedFloatWarmupAcc = 2f;
+    [SerializeField]
+    private float _speedFloatWarmupDec = 5f;
+    [SerializeField]
+    private string _turnAroundBool = "Turn";
 
     [SerializeField]
     private EdgeCollider2D _hitboxCollider;
 
 #pragma warning restore 0649
 
+    private Rigidbody2D _rb2d;
+    private float animatorSpeedFloat = 0;
     HashSet<Collider2D> _characterColliders;
 
     public bool IsGrounded
@@ -57,7 +69,10 @@ public class Character : MonoBehaviour
     {
         _characterColliders = new HashSet<Collider2D>(GetComponentsInChildren<Collider2D>());
         _rb2d = GetComponent<Rigidbody2D>();
-        _hitboxCollider = GetComponentInChildren<EdgeCollider2D>();
+        if (_hitboxCollider == null)
+            _hitboxCollider = GetComponentInChildren<EdgeCollider2D>();
+        if (_rigAnimator == null)
+            _rigAnimator = GetComponentInChildren<Animator>();
         SetEnabledObjects(false);
     }
 
@@ -81,6 +96,15 @@ public class Character : MonoBehaviour
         var currentVelocity = _rb2d.velocity;
         var newXSpeed = Mathf.MoveTowards(currentVelocity.x, goalXSpeed, acc * Time.deltaTime);
         _rb2d.velocity = new Vector2(newXSpeed, currentVelocity.y);
+
+        // Animation stuff
+        var goalFloatValue = direction.x == 0f ? 0f : 1f;
+        var animAcc = goalFloatValue == 0f ? _speedFloatWarmupDec : _speedFloatWarmupAcc;
+        animatorSpeedFloat = Mathf.MoveTowards(animatorSpeedFloat, goalFloatValue, Time.deltaTime * animAcc);
+        _rigAnimator.SetFloat(_speedFloat, animatorSpeedFloat);
+        _rigAnimator.SetBool(_runningBool, animatorSpeedFloat > 0f);
+        if (direction.x != 0f)
+            _rigAnimator.SetBool(_turnAroundBool, direction.x < 0f);
     }
 
     public void Jump()

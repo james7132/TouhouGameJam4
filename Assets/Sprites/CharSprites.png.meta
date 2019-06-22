@@ -1,0 +1,363 @@
+fileFormatVersion: 2
+guid: f4813addacd599443a4e37e42747c995
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 723255087231462421
+    second: CharSprites_ShinBowlLid
+  - first:
+      213: -5854095309450482196
+    second: CharSprites_SeijaTorso
+  - first:
+      213: 3580430729612704703
+    second: CharSprites_ShinBowl
+  - first:
+      213: -6552241664089789008
+    second: CharSprites_ShinBody
+  - first:
+      213: -7542418831794306322
+    second: CharSprites_ShinHammer
+  - first:
+      213: 7640440863727089286
+    second: CharSprites_SeijaRightArm
+  - first:
+      213: -4922299963100212330
+    second: CharSprites_SeijaLeftArm
+  - first:
+      213: -7717464555757539548
+    second: CharSprites_SeijaRightFoot
+  - first:
+      213: -7131802095010917684
+    second: CharSprites_SeijaLeftFoot
+  - first:
+      213: 723255087231462421
+    second: CharSprites_SeijaHead
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CharSprites_ShinBowlLid
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 788
+        width: 111
+        height: 22
+      alignment: 9
+      pivot: {x: 0.49307662, y: 0.46507123}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a713d1c3e4b8648aa1a6c57ba4c8c9
+      internalID: 723255087231462421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSprites_SeijaTorso
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 198
+        width: 268
+        height: 284
+      alignment: 9
+      pivot: {x: 0.5310839, y: 0.18122897}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd833aae86c3df94ba1c2c82d34e4cef
+      internalID: -5854095309450482196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSprites_ShinBowl
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 672
+        width: 113
+        height: 70
+      alignment: 9
+      pivot: {x: 0.47959805, y: 0.09381191}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e7fb93fc7d13043a9d23656fe001c0
+      internalID: 3580430729612704703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSprites_ShinBody
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 680
+        width: 66
+        height: 102
+      alignment: 9
+      pivot: {x: 0.60479, y: 0.2815151}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cec82bc16b7644893204e876460694
+      internalID: -6552241664089789008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSprites_ShinHammer
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 681
+        width: 73
+        height: 73
+      alignment: 9
+      pivot: {x: 0.66217124, y: 0.040512294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8ff05b9138757148ac4e17202178c0b
+      internalID: -7542418831794306322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSprites_SeijaRightArm
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 373
+        width: 78
+        height: 159
+      alignment: 9
+      pivot: {x: 0.1471722, y: 0.9285931}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8513b50672fd1f04a8574ef9a6d6f54f
+      internalID: 7640440863727089286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSprites_SeijaLeftArm
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 402
+        width: 87
+        height: 136
+      alignment: 9
+      pivot: {x: 0.13848245, y: 0.899897}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930c8f5a218418d40b2ff760e6f57b52
+      internalID: -4922299963100212330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSprites_SeijaRightFoot
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 122
+        width: 136
+        height: 190
+      alignment: 9
+      pivot: {x: 0.2109191, y: 0.8483188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836dae6eab8e667459ddc74af5e47b0e
+      internalID: -7717464555757539548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSprites_SeijaLeftFoot
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 130
+        width: 129
+        height: 176
+      alignment: 9
+      pivot: {x: 0.21554968, y: 0.8797486}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23c3fee65a878e49876f3bcaad1af9e
+      internalID: -7131802095010917684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharSprites_SeijaHead
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 511
+        width: 384
+        height: 300
+      alignment: 9
+      pivot: {x: 0.55380535, y: 0.07216634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd085c08c43c15b478b2358163b381f9
+      internalID: 723255087231462421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4061a98086082f849a10e6cbeaf59c6c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
