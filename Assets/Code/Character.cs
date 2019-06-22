@@ -34,6 +34,8 @@ public class Character : MonoBehaviour
     float _maxMoveSpeed = 5;
     [SerializeField]
     float _jumpForce = 5;
+    [SerializeField]
+    LayerMask groundDetectionMask;
 
     [SerializeField]
     private Animator _rigAnimator;
@@ -67,8 +69,8 @@ public class Character : MonoBehaviour
             var startPoint = (Vector2)transform.position + _hitboxCollider.points[0];
             var raycastVector = _hitboxCollider.points[1] - _hitboxCollider.points[0];
             Debug.DrawLine(startPoint, startPoint + raycastVector);
-            var result = Physics2D.Raycast(startPoint, raycastVector.normalized, raycastVector.magnitude);
-            return result && result.collider.tag.Equals("Floor");
+            var result = Physics2D.Raycast(startPoint, raycastVector.normalized, raycastVector.magnitude, groundDetectionMask);
+            return result;
         }
     }
 
