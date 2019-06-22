@@ -796,6 +796,8 @@ MonoBehaviour:
   _turnAroundBool: Turn
   _speedFloatWarmupAcc: 2
   _speedFloatWarmupDec: 5
+  _selectColor: {r: 1, g: 1, b: 1, a: 1}
+  _deselectColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _hitboxCollider: {fileID: 0}
 --- !u!61 &6339623295360769405
 BoxCollider2D:

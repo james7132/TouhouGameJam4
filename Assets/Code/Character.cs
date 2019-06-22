@@ -22,6 +22,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     GameObject[] _enabledOnSelect;
 
+    [Header("Movement Physics")]
     [SerializeField]
     float _movementAcc = 50;
     [SerializeField]
@@ -37,6 +38,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     LayerMask groundDetectionMask;
 
+    [Header("Animation")]
     [SerializeField]
     private Animator _rigAnimator;
     [SerializeField]
@@ -52,6 +54,12 @@ public class Character : MonoBehaviour
     [SerializeField]
     private float _speedFloatWarmupDec = 5f;
 
+    [Header("Sprite Fading")]
+    [SerializeField]
+    private Color _selectColor;
+    [SerializeField]
+    private Color _deselectColor;
+
     [SerializeField]
     private EdgeCollider2D _hitboxCollider;
 
@@ -61,6 +69,7 @@ public class Character : MonoBehaviour
     private float animatorSpeedFloat = 0;
     HashSet<Collider2D> _characterColliders;
     public bool IsSelected { get; set; }
+    HashSet<SpriteRenderer> _rigSpriteRenderers;
 
     public bool IsGrounded
     {
@@ -74,9 +83,8 @@ public class Character : MonoBehaviour
         }
     }
 
-
-    // Called before an object's first frame.
-    void Start()
+    
+    void Awake()
     {
         _characterColliders = new HashSet<Collider2D>(GetComponentsInChildren<Collider2D>());
         _rb2d = GetComponent<Rigidbody2D>();
@@ -84,6 +92,7 @@ public class Character : MonoBehaviour
             _hitboxCollider = GetComponentInChildren<EdgeCollider2D>();
         if (_rigAnimator == null)
             _rigAnimator = GetComponentInChildren<Animator>();
+        _rigSpriteRenderers = new HashSet<SpriteRenderer>(_rigAnimator.GetComponentsInChildren<SpriteRenderer>());
         SetEnabledObjects(false);
     }
 
@@ -176,12 +185,14 @@ public class Character : MonoBehaviour
     {
         IsSelected = true;
         SetEnabledObjects(true);
+        SetSpriteSelectedColors(true);
     }
 
     public virtual void Deselect()
     {
         IsSelected = false;
         SetEnabledObjects(false);
+        SetSpriteSelectedColors(false);
     }
 
     void SetEnabledObjects(bool state)
@@ -190,6 +201,15 @@ public class Character : MonoBehaviour
         {
             if (obj == null) continue;
             obj.SetActive(state);
+        }
+    }
+
+    void SetSpriteSelectedColors(bool selected)
+    {
+        print(name + " " + selected);
+        foreach (var spr in _rigSpriteRenderers)
+        {
+            spr.color = selected ? _selectColor : _deselectColor;
         }
     }
 

@@ -26,6 +26,13 @@ public class PlayerController : MonoBehaviour
     void Start() 
     {
         if (CurrentCharacter == null) return;
+        foreach (var character in _controllableCharacters)
+        {
+            if (character != CurrentCharacter)
+            {
+                character.Deselect();
+            }
+        }
         CurrentCharacter.Select();
     }
 
