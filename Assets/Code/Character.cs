@@ -7,6 +7,12 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
 #pragma warning disable 0649
+    [Header("Controls")]
+    [SerializeField]
+    string _horizontalAxis = "Horizontal";
+    [SerializeField]
+    string _verticalAxis = "Vertical";
+
     [SerializeField]
     Vector2 _interactionBoxSize;
 
@@ -52,6 +58,7 @@ public class Character : MonoBehaviour
     private Rigidbody2D _rb2d;
     private float animatorSpeedFloat = 0;
     HashSet<Collider2D> _characterColliders;
+    public bool IsSelected { get; set; }
 
     public bool IsGrounded
     {
@@ -78,11 +85,25 @@ public class Character : MonoBehaviour
         SetEnabledObjects(false);
     }
 
+    private void Update()
+    {
+        var movement = IsSelected
+                            ? new Vector2(Input.GetAxisRaw(_horizontalAxis),
+                                   Input.GetAxisRaw(_verticalAxis))
+                            : Vector2.zero;
+        HandleMovement(movement);
+        if (Input.GetButtonDown(_verticalAxis) && movement.y > 0)
+        {
+            Jump();
+        }
+        HandleAnimation(movement);
+    }
+
     /// <summary>
     /// Moves the character in a particular direction.
     /// </summary>
     /// <param name="direction"></param>
-    public void Move(Vector2 direction)
+    public void HandleMovement(Vector2 direction)
     {
         // Calculate acceleration
         var acc = 0f;
@@ -98,7 +119,10 @@ public class Character : MonoBehaviour
         var currentVelocity = _rb2d.velocity;
         var newXSpeed = Mathf.MoveTowards(currentVelocity.x, goalXSpeed, acc * Time.deltaTime);
         _rb2d.velocity = new Vector2(newXSpeed, currentVelocity.y);
+    }
 
+    void HandleAnimation(Vector2 direction)
+    {
         // Animation stuff
         // Run
         var goalFloatValue = direction.x == 0f ? 0f : 1f;
@@ -112,7 +136,7 @@ public class Character : MonoBehaviour
         // Jump
         if (IsGrounded)
             _rigAnimator.SetInteger(_JumpStateInt, 0);
-        else if (currentVelocity.y > 0f)
+        else if (_rb2d.velocity.y > 0f)
             _rigAnimator.SetInteger(_JumpStateInt, 1);
         else
             _rigAnimator.SetInteger(_JumpStateInt, 2);
@@ -148,11 +172,13 @@ public class Character : MonoBehaviour
 
     public virtual void Select()
     {
+        IsSelected = true;
         SetEnabledObjects(true);
     }
 
     public virtual void Deselect()
     {
+        IsSelected = false;
         SetEnabledObjects(false);
     }
 

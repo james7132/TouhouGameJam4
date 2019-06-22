@@ -6,10 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Controls")]
     [SerializeField]
-    string _horizontalAxis = "Horizontal";
-    [SerializeField]
-    string _verticalAxis = "Vertical";
-    [SerializeField]
     string _changeCharactersButton = "ChangeCharacters";
     [SerializeField]
     List<Character> _controllableCharacters;
@@ -40,13 +36,6 @@ public class PlayerController : MonoBehaviour
             ChangeCharacters();
         }
         if (CurrentCharacter == null) return;
-        var movement = new Vector2(Input.GetAxisRaw(_horizontalAxis),
-                                   Input.GetAxisRaw(_verticalAxis));
-        CurrentCharacter.Move(movement);
-        if (Input.GetButtonDown(_verticalAxis) && movement.y > 0)
-        {
-            CurrentCharacter.Jump();
-        }
     }
 
     public void ChangeCharacters() 
