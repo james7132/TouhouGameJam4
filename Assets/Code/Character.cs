@@ -36,11 +36,13 @@ public class Character : MonoBehaviour
     [SerializeField]
     private string _runningBool = "Running";
     [SerializeField]
+    private string _JumpStateInt = "JumpState"; // 0 is grounded, 1 is jumping up, 2 is falling down
+    [SerializeField]
+    private string _turnAroundBool = "Turn";
+    [SerializeField]
     private float _speedFloatWarmupAcc = 2f;
     [SerializeField]
     private float _speedFloatWarmupDec = 5f;
-    [SerializeField]
-    private string _turnAroundBool = "Turn";
 
     [SerializeField]
     private EdgeCollider2D _hitboxCollider;
@@ -98,13 +100,22 @@ public class Character : MonoBehaviour
         _rb2d.velocity = new Vector2(newXSpeed, currentVelocity.y);
 
         // Animation stuff
+        // Run
         var goalFloatValue = direction.x == 0f ? 0f : 1f;
         var animAcc = goalFloatValue == 0f ? _speedFloatWarmupDec : _speedFloatWarmupAcc;
         animatorSpeedFloat = Mathf.MoveTowards(animatorSpeedFloat, goalFloatValue, Time.deltaTime * animAcc);
         _rigAnimator.SetFloat(_speedFloat, animatorSpeedFloat);
         _rigAnimator.SetBool(_runningBool, animatorSpeedFloat > 0f);
+        // Flip
         if (direction.x != 0f)
             _rigAnimator.SetBool(_turnAroundBool, direction.x < 0f);
+        // Jump
+        if (IsGrounded)
+            _rigAnimator.SetInteger(_JumpStateInt, 0);
+        else if (currentVelocity.y > 0f)
+            _rigAnimator.SetInteger(_JumpStateInt, 1);
+        else
+            _rigAnimator.SetInteger(_JumpStateInt, 2);
     }
 
     public void Jump()

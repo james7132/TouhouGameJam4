@@ -279,7 +279,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1511290357
   m_SortingLayer: 1
-  m_SortingOrder: 4
+  m_SortingOrder: 12
   m_Sprite: {fileID: 7640440863727089286, guid: f4813addacd599443a4e37e42747c995,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -786,8 +786,11 @@ MonoBehaviour:
   _jumpForce: 350
   _rigAnimator: {fileID: 0}
   _speedFloat: Speed
-  _speedFloatMaxSpeed: 4
   _runningBool: Running
+  _JumpStateInt: JumpState
+  _turnAroundBool: Turn
+  _speedFloatWarmupAcc: 2
+  _speedFloatWarmupDec: 5
   _hitboxCollider: {fileID: 0}
 --- !u!61 &6339623295360769405
 BoxCollider2D:
