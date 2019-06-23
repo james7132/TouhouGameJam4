@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class PlayerController : MonoBehaviour
     string _changeCharactersButton = "ChangeCharacters";
     [SerializeField]
     string _interactButton = "Interact";
+    [SerializeField]
+    string _resetlevelButton = "ResetLevel";
+    [SerializeField]
+    string _skipLevelButton = "SkipLevel";
     [SerializeField]
     List<Character> _controllableCharacters;
 
@@ -42,6 +47,14 @@ public class PlayerController : MonoBehaviour
 
     void Update() 
     {
+        if (Input.GetButtonDown(_resetlevelButton)) 
+        {
+            ResetLevel();
+        }
+        if (Input.GetButtonDown(_skipLevelButton)) 
+        {
+            SkipLevel();
+        }
         if (Input.GetButtonDown(_changeCharactersButton)) 
         {
             ChangeCharacters();
@@ -60,6 +73,20 @@ public class PlayerController : MonoBehaviour
         _currentIndex = (_currentIndex + 1) % _controllableCharacters.Count;
         CurrentCharacter?.Select();
         Debug.Log($"Changed Characters to: {CurrentCharacter}");
+    }
+
+    public void SkipLevel() 
+    {
+        var currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex + 1);
+        Debug.Log("Skipped level!");
+    }
+
+    public void ResetLevel() 
+    {
+        var currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
+        Debug.Log("Reset level!");
     }
 
 }
