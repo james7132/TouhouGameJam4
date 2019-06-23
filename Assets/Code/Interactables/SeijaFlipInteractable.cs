@@ -28,7 +28,9 @@ public class SeijaFlipInteractable : TriggerListener
 
     protected override void OnTriggerFired(TriggerBehaviour trigger, Character source)
     {
+        print(trigger);
         GetComponent<Rigidbody2D>().gravityScale *= -1f;
         goalYScale *= -1f;
+        Debug.Log("Seija Flipped!");
     }
 }

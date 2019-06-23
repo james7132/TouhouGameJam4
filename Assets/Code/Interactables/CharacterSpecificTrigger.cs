@@ -8,7 +8,8 @@ public class CharacterSpecificTrigger : TriggerBehaviour
     [Flags]
     public enum SpecificCharacter
     {
-        Seija, Shimmyomaru
+        Seija = 1,
+        Shimmyomaru = 2
     }
 
     static Dictionary<Type, SpecificCharacter> _matchMap = new Dictionary<Type, SpecificCharacter> {
@@ -18,12 +19,16 @@ public class CharacterSpecificTrigger : TriggerBehaviour
 
     #pragma warning disable 0649
     [SerializeField]
-    SpecificCharacter _allowedCharacters = (SpecificCharacter)~0;
+    SpecificCharacter _allowedCharacters;
     #pragma warning restore 0649
 
-    public void Interact(Character source) 
+    public override string ToString() => _allowedCharacters.ToString();
+
+    public override void Interact(Character source) 
     {
         var character = _matchMap[source.GetType()];
+        Debug.Log((int)_allowedCharacters);
+        Debug.Log((int)character);
         if ((_allowedCharacters & character) != 0) 
         {
             Invoke(source);

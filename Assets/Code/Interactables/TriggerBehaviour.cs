@@ -1,8 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[DisallowMultipleComponent]
-public abstract class TriggerBehaviour : MonoBehaviour
+public abstract class TriggerBehaviour : MonoBehaviour, IInteractable
 {
     public event Action<TriggerBehaviour, Character> OnTriggerFired;
 
@@ -20,5 +19,11 @@ public abstract class TriggerBehaviour : MonoBehaviour
     protected virtual void OnDestroy() 
     {
         ClearListeners();
+    }
+
+    public virtual void Interact(Character source) 
+    {
+        // TODO(james7132): Properly implement
+        Invoke(source);
     }
 }

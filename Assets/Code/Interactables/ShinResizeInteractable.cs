@@ -34,6 +34,7 @@ public class ShinResizeInteractable : TriggerListener
 
     protected override void OnTriggerFired(TriggerBehaviour trigger, Character source)
     {
+        print((CharacterSpecificTrigger)trigger);
         var rb2d = GetComponent<Rigidbody2D>();
         _currentSizeLevel++;
         if (_currentSizeLevel < _sizeLevels)
@@ -50,5 +51,6 @@ public class ShinResizeInteractable : TriggerListener
             }
             _currentSizeLevel = 0;
         }
+        Debug.Log("Shin resized!");
     }
 }
