@@ -39,6 +39,8 @@ public class Character : MonoBehaviour
     LayerMask _groundDetectionMask;
     [SerializeField]
     LayerMask _sideDetectionMask;
+    [SerializeField]
+    bool _canRestOnHead;
 
     [Header("Animation")]
     [SerializeField]
@@ -83,17 +85,23 @@ public class Character : MonoBehaviour
     private Vector2 _movement;
     private float _initialMass;
     private BoxCollider2D _mainCollider;
+    public BoxCollider2D MainCollider => _mainCollider;
     private float _initialMainColliderEdgeRadius;
 
-    public bool IsGrounded => RaycastCollider(_groundCollider, _groundDetectionMask);
+    public RaycastHit2D IsGrounded => RaycastCollider(_groundCollider, _groundDetectionMask);
     public bool FacingRight { get; set; }
 
-    public bool RaycastCollider(EdgeCollider2D collider, LayerMask raycastMask)
+    public RaycastHit2D RaycastCollider(EdgeCollider2D collider, LayerMask raycastMask)
     {
         var point1 = collider.points[0];
         var point2 = collider.points[1];
         point1.Scale(transform.localScale);
         point2.Scale(transform.localScale);
+        if (_rb2d.gravityScale < 0f)
+        {
+            point1.y *= -1f;
+            point2.y *= -1f;
+        }
         var startPoint = (Vector2)transform.position + point1;
         var raycastVector = point2 - point1;
         Debug.DrawLine(startPoint, startPoint + raycastVector);
@@ -133,14 +141,22 @@ public class Character : MonoBehaviour
                 _movement.x = 0f;
         }
 
+        var groundedData = IsGrounded;
         if (Input.GetButtonDown(_verticalAxis)
             && _movement.y != 0
-            && Math.Sign(_movement.y) == Mathf.Sign(_rb2d.gravityScale))
+            && Math.Sign(_movement.y) == Mathf.Sign(_rb2d.gravityScale)
+            && groundedData)
         {
             Jump();
         }
         HandleAnimation(_movement, rawMovement);
     }
+
+    bool ShouldBeDormant(RaycastHit2D groundCast) =>
+                !IsSelected
+                && groundCast
+                && groundCast.collider.transform.root.tag.Equals("Character")
+                && _movement == Vector2.zero;
 
     private void FixedUpdate()
     {
@@ -195,8 +211,7 @@ public class Character : MonoBehaviour
 
     public void Jump()
     {
-        if (IsGrounded)
-            _rb2d.AddForce(Vector2.up * _jumpForce * Mathf.Sign(_rb2d.gravityScale) * (_rb2d.mass / _initialMass));
+        _rb2d.AddForce(Vector2.up * _jumpForce * Mathf.Sign(_rb2d.gravityScale) * (_rb2d.mass / _initialMass));
     }
 
     /// <summary>
@@ -238,6 +253,16 @@ public class Character : MonoBehaviour
         IsSelected = true;
         SetEnabledObjects(true);
         SetSpriteSelectedColors(true);
+
+        if (_canRestOnHead)
+        {
+            if (_rb2d.isKinematic)
+            {
+                _rb2d.isKinematic = false;
+                _mainCollider.enabled = true;
+                transform.SetParent(null);
+            }
+        }
     }
 
     public virtual void Deselect()
@@ -245,6 +270,17 @@ public class Character : MonoBehaviour
         IsSelected = false;
         SetEnabledObjects(false);
         SetSpriteSelectedColors(false);
+
+        if (_canRestOnHead)
+        {
+            var groundedData = IsGrounded;
+            if (ShouldBeDormant(groundedData))
+            {
+                _rb2d.isKinematic = true;
+                _mainCollider.enabled = false;
+                transform.SetParent(groundedData.collider.transform);
+            }
+        }
     }
 
     void SetEnabledObjects(bool state)

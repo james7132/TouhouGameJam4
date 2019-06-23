@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 3156564429056342487}
-  m_Father: {fileID: 5296203733680438878}
-  m_RootOrder: 5
+  m_Father: {fileID: 5321610097180230418}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &20056039132849711
 Animator:
@@ -212,6 +212,37 @@ Transform:
   m_Father: {fileID: 3156564429056342487}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3518259565349236187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5321610097180230418}
+  m_Layer: 8
+  m_Name: Rig Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5321610097180230418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518259565349236187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2832699084328633706}
+  m_Father: {fileID: 5296203733680438878}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4824020037558682992
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +417,7 @@ GameObject:
   - component: {fileID: 8532539096542802603}
   m_Layer: 8
   m_Name: Character 2
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,7 +438,7 @@ Transform:
   - {fileID: 7478963690863721678}
   - {fileID: 5311875396721109871}
   - {fileID: 7715805430133743360}
-  - {fileID: 2832699084328633706}
+  - {fileID: 5321610097180230418}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -437,10 +468,11 @@ MonoBehaviour:
   _jumpForce: 60
   _groundDetectionMask:
     serializedVersion: 2
-    m_Bits: 769
+    m_Bits: 513
   _sideDetectionMask:
     serializedVersion: 2
     m_Bits: 1
+  _canRestOnHead: 1
   _rigAnimator: {fileID: 0}
   _speedFloat: Speed
   _runningBool: Running
@@ -529,7 +561,7 @@ MonoBehaviour:
   _triggers:
   - {fileID: 7392269577106672960}
   _lerpSpeed: 10
-  _graphicTransform: {fileID: 5296203733680438878}
+  _graphicTransform: {fileID: 5321610097180230418}
 --- !u!1 &5841084107167925125
 GameObject:
   m_ObjectHideFlags: 0
