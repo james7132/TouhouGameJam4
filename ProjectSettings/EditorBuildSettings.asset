@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1Peter.unity
     guid: ad536e7e587702e4182679696155dff5
   - enabled: 1
+    path: Assets/Scenes/Level2Thomas.unity
+    guid: 24059500f3b23114380e009e85c0165a
+  - enabled: 1
     path: Assets/Scenes/Level1Thomas.unity
     guid: ad4060a93abbe29458e81a85e68d5d15
   - enabled: 1
