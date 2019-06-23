@@ -13,9 +13,9 @@ public class SeijaFlipInteractable : TriggerListener
 
     private void Start()
     {
-        goalYScale = _graphicTransform.localScale.y;
         if (_graphicTransform == null)
             _graphicTransform = GetComponentInChildren<SpriteRenderer>().transform;
+        goalYScale = _graphicTransform.localScale.y;
     }
 
     private void Update()

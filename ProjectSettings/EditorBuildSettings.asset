@@ -9,30 +9,39 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 7ff5e38db6d9f2f45a977e1d0c25ccbc
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Story/IntroScene.unity
+    guid: e45a95920d3aea043b98057830f22ead
+  - enabled: 1
+    path: Assets/Scenes/Level2Peter.unity
+    guid: 0fb383a6958f3c047b753d955f825da5
+  - enabled: 1
+    path: Assets/Scenes/Level1Brian.unity
+    guid: d01b2b31f0675984997ace6f38f027dd
+  - enabled: 1
+    path: Assets/Scenes/Level2Brian.unity
+    guid: eb510e2f162ca1641b12761be9f80ae9
+  - enabled: 1
+    path: Assets/Scenes/Story/PreStage1.unity
+    guid: 55f344a24ffb1b24cb8e0b9c3bdfc6ee
+  - enabled: 1
+    path: Assets/Scenes/Level1James.unity
     guid: d0ce00991a4cd884baa0c2dba9ec6dc0
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/Level2James.unity
     guid: 8afd5c68a8d63564a9c2e3c6b8ba240a
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/Level3James.unity
     guid: df87bb6cdbca0e04caf37edac2d3b2f0
   - enabled: 1
-    path: Assets/Scenes/Level4.unity
-    guid: 28ae18e7c6eb1d14d9b6f3da96d76156
+    path: Assets/Scenes/Story/PreStage2.unity
+    guid: bfe9b7ec368bc2d4d832b1bc2f40c269
   - enabled: 1
-    path: Assets/Scenes/Level5.unity
-    guid: 2528cf5b20cd0d14f831621236d019aa
+    path: Assets/Scenes/Level1Peter.unity
+    guid: ad536e7e587702e4182679696155dff5
   - enabled: 1
-    path: Assets/Scenes/Level6.unity
-    guid: 9a0fe9babf47ff34099d6c75eee706e9
+    path: Assets/Scenes/Level1Thomas.unity
+    guid: ad4060a93abbe29458e81a85e68d5d15
   - enabled: 1
-    path: Assets/Scenes/Level7.unity
-    guid: 8bb6e10eb97c8524f9a2a9b72384f165
-  - enabled: 1
-    path: Assets/Scenes/Level8.unity
-    guid: dd91d7504aba2544b9a5bbe25dd364ff
-  - enabled: 1
-    path: Assets/Scenes/Level9.unity
-    guid: affa3669f09fd6e48b7f22999c01ba12
+    path: Assets/Scenes/Story/EndingScene.unity
+    guid: b771cc7a5f9496643932d050eb6a25d9
   m_configObjects: {}
