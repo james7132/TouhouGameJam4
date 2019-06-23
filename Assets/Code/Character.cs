@@ -205,10 +205,10 @@ public class Character : MonoBehaviour
     public void Interact()
     {
         Debug.Log($"{name} interacted.");
-        var offset = _interactionBoxOffset;
+        var offset = _interactionBoxOffset * transform.localScale.x;
         if (!FacingRight) offset.x *= -1;
         Vector2 center = ((Vector2)transform.position) + offset;
-        var interactables = Physics2D.OverlapBoxAll(center, _interactionBoxSize, 0)
+        var interactables = Physics2D.OverlapBoxAll(center, _interactionBoxSize * transform.localScale.x, 0)
                                      .Where(col => !_characterColliders.Contains(col))
                                      .SelectMany(col => col.GetComponentsInChildren<IInteractable>());
         foreach (var interactable in interactables)
@@ -227,10 +227,10 @@ public class Character : MonoBehaviour
     }
 
     void OnDrawGizmos() {
-        var offset = _interactionBoxOffset;
+        var offset = _interactionBoxOffset * transform.localScale.x;
         if (!FacingRight) offset.x *= -1;
         Vector2 center = ((Vector2)transform.position) + offset;
-        Gizmos.DrawWireCube(center, _interactionBoxSize);
+        Gizmos.DrawWireCube(center, _interactionBoxSize * transform.localScale);
     }
 
     public virtual void Select()
