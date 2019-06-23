@@ -89,15 +89,16 @@ public class Character : MonoBehaviour
     private float _initialMainColliderEdgeRadius;
 
     public RaycastHit2D IsGrounded => RaycastCollider(_groundCollider, _groundDetectionMask);
+    public RaycastHit2D IsGroundedHead => RaycastCollider(_groundCollider, _groundDetectionMask, true);
     public bool FacingRight { get; set; }
 
-    public RaycastHit2D RaycastCollider(EdgeCollider2D collider, LayerMask raycastMask)
+    public RaycastHit2D RaycastCollider(EdgeCollider2D collider, LayerMask raycastMask, bool flipY = false)
     {
         var point1 = collider.points[0];
         var point2 = collider.points[1];
         point1.Scale(transform.localScale);
         point2.Scale(transform.localScale);
-        if (_rb2d.gravityScale < 0f)
+        if (_rb2d.gravityScale < 0f ^ flipY)
         {
             point1.y *= -1f;
             point2.y *= -1f;
@@ -145,7 +146,8 @@ public class Character : MonoBehaviour
         if (Input.GetButtonDown(_verticalAxis)
             && _movement.y != 0
             && Math.Sign(_movement.y) == Mathf.Sign(_rb2d.gravityScale)
-            && groundedData)
+            && groundedData
+            && !IsGroundedHead)
         {
             Jump();
         }
