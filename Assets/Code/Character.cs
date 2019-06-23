@@ -246,7 +246,7 @@ public class Character : MonoBehaviour
         _rigAnimator.SetTrigger(_interactTrigger);
         if (_interactAudio != null) 
         {
-            _interactAudio.Play();
+            _interactAudio.PlayOneShot(_interactAudio.clip);
         }
     }
 
