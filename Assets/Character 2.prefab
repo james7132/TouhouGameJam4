@@ -382,6 +382,8 @@ GameObject:
   - component: {fileID: 7598337548999863077}
   - component: {fileID: 5296203733680438877}
   - component: {fileID: 3548878195196897835}
+  - component: {fileID: 7392269577106672960}
+  - component: {fileID: 8532539096542802603}
   m_Layer: 8
   m_Name: Character 2
   m_TagString: Untagged
@@ -499,6 +501,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7392269577106672960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296203733680438866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28a3a44cad0437488fae1fe32c321a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allowedCharacters: 1
+--- !u!114 &8532539096542802603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296203733680438866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2328ea23322d34082e29b70b612d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 7392269577106672960}
+  _lerpSpeed: 10
+  _graphicTransform: {fileID: 5296203733680438878}
 --- !u!1 &5841084107167925125
 GameObject:
   m_ObjectHideFlags: 0

@@ -124,6 +124,7 @@ public class Character : MonoBehaviour
                             ? new Vector2(Input.GetAxisRaw(_horizontalAxis),
                                    Input.GetAxisRaw(_verticalAxis))
                             : Vector2.zero;
+        var rawMovement = _movement;
         if (_movement.x != 0f)
         {
             // Stop if moving against a wall
@@ -138,7 +139,7 @@ public class Character : MonoBehaviour
         {
             Jump();
         }
-        HandleAnimation(_movement);
+        HandleAnimation(_movement, rawMovement);
     }
 
     private void FixedUpdate()
@@ -168,7 +169,7 @@ public class Character : MonoBehaviour
         _rb2d.velocity = new Vector2(newXSpeed, currentVelocity.y);
     }
 
-    void HandleAnimation(Vector2 direction)
+    void HandleAnimation(Vector2 direction, Vector2 inputDirection)
     {
         // Animation stuff
         // Run
@@ -178,10 +179,10 @@ public class Character : MonoBehaviour
         _rigAnimator.SetFloat(_speedFloat, animatorSpeedFloat);
         _rigAnimator.SetBool(_runningBool, animatorSpeedFloat > 0f);
         // Flip
-        if (direction.x != 0f)
+        if (inputDirection.x != 0f)
         {
-            FacingRight = direction.x > 0f;
-            _rigAnimator.SetBool(_turnAroundBool, direction.x < 0f);
+            FacingRight = inputDirection.x > 0f;
+            _rigAnimator.SetBool(_turnAroundBool, !FacingRight);
         }
         // Jump
         if (IsGrounded)

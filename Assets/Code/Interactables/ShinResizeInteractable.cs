@@ -24,7 +24,7 @@ public class ShinResizeInteractable : TriggerListener
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Q))
         //    OnTriggerFired(null, null);
         if (transform.localScale != goalScale)
         {

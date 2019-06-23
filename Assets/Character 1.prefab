@@ -338,8 +338,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.35, y: -0.83}
-  - {x: 0.35, y: -0.83}
+  - {x: -0.35, y: -0.86}
+  - {x: 0.35, y: -0.86}
 --- !u!1 &4829680491104674698
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +834,8 @@ GameObject:
   - component: {fileID: 6752639435324435381}
   - component: {fileID: 6339623295360769405}
   - component: {fileID: -501823743815618313}
+  - component: {fileID: 8825519215987595462}
+  - component: {fileID: 5567427460352938465}
   m_Layer: 8
   m_Name: Character 1
   m_TagString: Untagged
@@ -951,6 +953,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8825519215987595462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6339623295360769402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28a3a44cad0437488fae1fe32c321a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allowedCharacters: 2
+--- !u!114 &5567427460352938465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6339623295360769402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1ba14644657874297b6470d650f586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 8825519215987595462}
+  _sizeLevels: 3
+  _currentSizeLevel: 1
+  _sizeLevelUpMult: 2
+  _massLevelUpMult: 2
+  _lerpSizeSpeed: 20
 --- !u!1 &8816380357472291167
 GameObject:
   m_ObjectHideFlags: 0
