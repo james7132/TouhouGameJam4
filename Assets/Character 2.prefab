@@ -425,7 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalAxis: Horizontal
   _verticalAxis: Vertical
-  _interactionBoxSize: {x: 1, y: 0.35}
+  _interactionBoxSize: {x: 1, y: 0.4}
   _interactionBoxOffset: {x: 0.5, y: 0}
   _enabledOnSelect:
   - {fileID: 5296203732975774020}
