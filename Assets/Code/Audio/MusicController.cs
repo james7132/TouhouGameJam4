@@ -15,12 +15,14 @@ public class MusicController : MonoBehaviour
         }
         else if (instance.GetComponent<AudioSource>().clip != GetComponent<AudioSource>().clip)
         {
-            Destroy(instance);
+            Destroy(instance.gameObject);
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
+        {
             Destroy(gameObject);
+        }
 
     }
 }
