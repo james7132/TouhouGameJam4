@@ -86,6 +86,7 @@ public class Character : MonoBehaviour
     private float _initialMainColliderEdgeRadius;
 
     public bool IsGrounded => RaycastCollider(_groundCollider, _groundDetectionMask);
+    public bool FacingRight { get; set; }
 
     public bool RaycastCollider(EdgeCollider2D collider, LayerMask raycastMask)
     {
@@ -111,6 +112,7 @@ public class Character : MonoBehaviour
         _initialMass = _rb2d.mass;
         _mainCollider = GetComponent<BoxCollider2D>();
         _initialMainColliderEdgeRadius = _mainCollider.edgeRadius;
+        FacingRight = true;
     }
 
     private void Update()
@@ -178,7 +180,10 @@ public class Character : MonoBehaviour
         _rigAnimator.SetBool(_runningBool, animatorSpeedFloat > 0f);
         // Flip
         if (direction.x != 0f)
+        {
+            FacingRight = direction.x > 0f;
             _rigAnimator.SetBool(_turnAroundBool, direction.x < 0f);
+        }
         // Jump
         if (IsGrounded)
             _rigAnimator.SetInteger(_JumpStateInt, 0);
