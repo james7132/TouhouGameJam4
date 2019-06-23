@@ -437,7 +437,7 @@ MonoBehaviour:
   _jumpForce: 60
   _groundDetectionMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 769
   _sideDetectionMask:
     serializedVersion: 2
     m_Bits: 1

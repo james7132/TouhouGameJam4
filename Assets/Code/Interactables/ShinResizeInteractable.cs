@@ -7,7 +7,7 @@ public class ShinResizeInteractable : TriggerListener
     [SerializeField]
     private int _sizeLevels = 3;
     [SerializeField]
-    private int _currentSizeLevel = 0;
+    private int _currentSizeLevel = 1;
     [SerializeField]
     private float _sizeLevelUpMult = 2f;
     [SerializeField]

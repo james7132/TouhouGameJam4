@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 342417009648158095}
   - component: {fileID: 342417009648158088}
   - component: {fileID: 342417009648158089}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crate 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   _triggers:
   - {fileID: 342417009648158095}
   _sizeLevels: 3
-  _currentSizeLevel: 0
+  _currentSizeLevel: 1
   _sizeLevelUpMult: 2
   _massLevelUpMult: 2
   _lerpSizeSpeed: 20
@@ -155,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1986622930761342142}
   - component: {fileID: 2253426433568280}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
