@@ -81,13 +81,20 @@ public class Character : MonoBehaviour
     public bool IsSelected { get; set; }
     HashSet<SpriteRenderer> _rigSpriteRenderers;
     private Vector2 _movement;
+    private float _initialMass;
+    private BoxCollider2D _mainCollider;
+    private float _initialMainColliderEdgeRadius;
 
     public bool IsGrounded => RaycastCollider(_groundCollider, _groundDetectionMask);
 
     public bool RaycastCollider(EdgeCollider2D collider, LayerMask raycastMask)
     {
-        var startPoint = (Vector2)transform.position + collider.points[0];
-        var raycastVector = collider.points[1] - collider.points[0];
+        var point1 = collider.points[0];
+        var point2 = collider.points[1];
+        point1.Scale(transform.localScale);
+        point2.Scale(transform.localScale);
+        var startPoint = (Vector2)transform.position + point1;
+        var raycastVector = point2 - point1;
         Debug.DrawLine(startPoint, startPoint + raycastVector);
         var result = Physics2D.Raycast(startPoint, raycastVector.normalized, raycastVector.magnitude, raycastMask);
         return result;
@@ -101,10 +108,16 @@ public class Character : MonoBehaviour
             _rigAnimator = GetComponentInChildren<Animator>();
         _rigSpriteRenderers = new HashSet<SpriteRenderer>(_rigAnimator.GetComponentsInChildren<SpriteRenderer>());
         SetEnabledObjects(false);
+        _initialMass = _rb2d.mass;
+        _mainCollider = GetComponent<BoxCollider2D>();
+        _initialMainColliderEdgeRadius = _mainCollider.edgeRadius;
     }
 
     private void Update()
     {
+        if (_mainCollider.edgeRadius != _initialMainColliderEdgeRadius * transform.localScale.x)
+            _mainCollider.edgeRadius = _initialMainColliderEdgeRadius * transform.localScale.x;
+
         _movement = IsSelected
                             ? new Vector2(Input.GetAxisRaw(_horizontalAxis),
                                    Input.GetAxisRaw(_verticalAxis))
@@ -117,7 +130,9 @@ public class Character : MonoBehaviour
                 _movement.x = 0f;
         }
 
-        if (Input.GetButtonDown(_verticalAxis) && _movement.y > 0)
+        if (Input.GetButtonDown(_verticalAxis)
+            && _movement.y != 0
+            && Math.Sign(_movement.y) == Mathf.Sign(_rb2d.gravityScale))
         {
             Jump();
         }
@@ -176,7 +191,7 @@ public class Character : MonoBehaviour
     public void Jump()
     {
         if (IsGrounded)
-            _rb2d.AddForce(Vector2.up * _jumpForce);
+            _rb2d.AddForce(Vector2.up * _jumpForce * Mathf.Sign(_rb2d.gravityScale) * (_rb2d.mass / _initialMass));
     }
 
     /// <summary>
