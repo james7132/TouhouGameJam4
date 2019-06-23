@@ -125,7 +125,7 @@ MonoBehaviour:
   _triggers:
   - {fileID: 342417009648158094}
   _lerpSpeed: 10
-  _graphicTransform: {fileID: 0}
+  _graphicTransform: {fileID: 1986622930761342142}
 --- !u!114 &342417009648158089
 MonoBehaviour:
   m_ObjectHideFlags: 0
