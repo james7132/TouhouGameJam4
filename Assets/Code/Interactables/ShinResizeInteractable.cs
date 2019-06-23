@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShinResizeInteractable : TriggerListener
 {
     [SerializeField]
-    private int _sizeLevels = 2;
+    private int _sizeLevels = 3;
     [SerializeField]
     private int _currentSizeLevel = 0;
     [SerializeField]
@@ -25,7 +25,7 @@ public class ShinResizeInteractable : TriggerListener
         }
         else
         {
-            for (int i = 0; i < _sizeLevels; i++)
+            for (int i = 0; i < _sizeLevels - 1; i++)
             {
                 scale /= _sizeLevelUpMult;
                 rb2d.mass /= _massLevelUpMult;
