@@ -8,6 +8,8 @@ public class StoryScene : MonoBehaviour
 {
     [SerializeField]
     private StorySlide[] _slides;
+    [SerializeField]
+    private bool toTitle;
 
     [System.Serializable]
     public class StorySlide
@@ -34,7 +36,7 @@ public class StoryScene : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             AdvancePage();
         }
@@ -47,8 +49,10 @@ public class StoryScene : MonoBehaviour
             _spr.sprite = _slides[_currentIndex].Sprite;
             _tmp.text = _slides[_currentIndex].Text;
         }
-        else
+        else if (!toTitle)
             SceneManager.LoadScene(gameObject.scene.buildIndex + 1);
+        else
+            SceneManager.LoadScene(0);
 
         _currentIndex++;
     }
