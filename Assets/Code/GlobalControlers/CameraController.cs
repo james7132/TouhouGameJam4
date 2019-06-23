@@ -46,6 +46,6 @@ public class CameraController : MonoBehaviour
         var diffX = _camera.aspect * Mathf.Abs(maxX - minX);
         var diffY = Mathf.Abs(maxY - minY);
         var diff = Mathf.Max(diffX, diffY);
-        _camera.orthographicSize = Mathf.Clamp(diff / 2, _minSize, _maxSize);
+        _camera.orthographicSize = Mathf.Clamp(diff / 1.5f, _minSize, _maxSize);
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Character
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - Character
   - Interactable
-  - 
+  - Goal
   - 
   - 
   - 
