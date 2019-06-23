@@ -77,6 +77,7 @@ public class Character : MonoBehaviour
 
 #pragma warning restore 0649
 
+    private AudioSource _interactAudio;
     private Rigidbody2D _rb2d;
     private float animatorSpeedFloat = 0;
     HashSet<Collider2D> _characterColliders;
@@ -112,6 +113,7 @@ public class Character : MonoBehaviour
 
     void Awake()
     {
+        _interactAudio = GetComponent<AudioSource>();
         _characterColliders = new HashSet<Collider2D>(GetComponentsInChildren<Collider2D>());
         _rb2d = GetComponent<Rigidbody2D>();
         if (_rigAnimator == null)
@@ -242,6 +244,10 @@ public class Character : MonoBehaviour
         }
 
         _rigAnimator.SetTrigger(_interactTrigger);
+        if (_interactAudio != null) 
+        {
+            _interactAudio.Play();
+        }
     }
 
     void OnDrawGizmos() {
