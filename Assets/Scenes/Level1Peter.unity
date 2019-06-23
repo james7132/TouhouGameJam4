@@ -599,8 +599,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221669991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.46, y: -1.0199995, z: -1.5849609}
-  m_LocalScale: {x: 3, y: 55, z: 1}
+  m_LocalPosition: {x: 9.46, y: 1.57, z: -1.5849609}
+  m_LocalScale: {x: 3, y: 38.72089, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -917,8 +917,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632996568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.88, y: 2.88, z: -1.5849609}
-  m_LocalScale: {x: 3, y: 55, z: 1}
+  m_LocalPosition: {x: -8.88, y: 3.47, z: -1.5849609}
+  m_LocalScale: {x: 3, y: 50.290623, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -2113,6 +2113,11 @@ PrefabInstance:
     - target: {fileID: 7798296750363361089, guid: 07aad626f46dd0d458f6ab3eb5e973a8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271808139897545573, guid: 07aad626f46dd0d458f6ab3eb5e973a8,
+        type: 3}
+      propertyPath: isSeija
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
