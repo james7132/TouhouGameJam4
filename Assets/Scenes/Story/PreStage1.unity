@@ -491,52 +491,123 @@ PrefabInstance:
     - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
         type: 3}
       propertyPath: _slides.Array.data[0]._text
-      value: 'Seija: "At last, I, the most charming and talented of the Gensokyo residents,
-        will claim a gf of my own!"'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
         type: 3}
       propertyPath: _slides.Array.data[0]._sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bcaf1f06f0aff9546a441a9dbdd83576,
+      objectReference: {fileID: 21300000, guid: 027742804d857484b82f80174118f79b,
         type: 3}
     - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
         type: 3}
       propertyPath: _slides.Array.data[1]._sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 67e3a28a925179442bcd0b271f207221,
+      objectReference: {fileID: 21300000, guid: eaf3df3133af7dc44813040feca3d48b,
         type: 3}
     - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
         type: 3}
       propertyPath: _slides.Array.data[1]._text
-      value: 'Seija: "I just need a convoluted and mildly sinister plan..."'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
         type: 3}
       propertyPath: _slides.Array.data[2]._text
-      value: how does this look
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
         type: 3}
       propertyPath: _slides.Array.data[3]._sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 67e3a28a925179442bcd0b271f207221,
+      objectReference: {fileID: 21300000, guid: 47c2bc6e367ccc545b223c1870873836,
         type: 3}
     - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
         type: 3}
       propertyPath: _slides.Array.data[3]._text
-      value: how does this look
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
         type: 3}
       propertyPath: _slides.Array.data[2]._sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f559afc07c24c5438b861376799f78d,
+      objectReference: {fileID: 21300000, guid: 52ea3c824a23baf498ac6dac452f8386,
+        type: 3}
+    - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: _slides.Array.data[4]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 76eef5c1ebfcad94d91a9d717ab9568b,
+        type: 3}
+    - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: _slides.Array.data[5]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fb70c84aa1a93994f8ca8aef269d9b9f,
+        type: 3}
+    - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: _slides.Array.data[6]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f29a8e5aa4ac6fe459082750c6516ca0,
+        type: 3}
+    - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: _slides.Array.data[7]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dcccb0e5bce6dff4ca5f8330c9e03812,
+        type: 3}
+    - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: _slides.Array.data[8]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c1e0a8f16ad2c1641a6ba1c48dda3a58,
+        type: 3}
+    - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: _slides.Array.data[9]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f760813fe1c7804d9d7ff69cb74d41d,
+        type: 3}
+    - target: {fileID: 8405411536830588941, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: _slides.Array.data[10]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c1e0a8f16ad2c1641a6ba1c48dda3a58,
         type: 3}
     - target: {fileID: 8405411536617862802, guid: 4d60da7785abf324896425d312449702,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405411536617862796, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405411536617862796, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405411536617862796, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405411536617862796, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405411536617862796, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405411536617862796, guid: 4d60da7785abf324896425d312449702,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d60da7785abf324896425d312449702, type: 3}
