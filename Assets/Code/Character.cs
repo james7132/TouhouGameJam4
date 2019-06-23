@@ -225,7 +225,8 @@ public class Character : MonoBehaviour
         Vector2 center = ((Vector2)transform.position) + offset;
         var interactables = Physics2D.OverlapBoxAll(center, _interactionBoxSize * transform.localScale.x, 0)
                                      .Where(col => !_characterColliders.Contains(col))
-                                     .SelectMany(col => col.GetComponentsInChildren<IInteractable>());
+                                     .SelectMany(col => col.GetComponentsInChildren<IInteractable>())
+                                     .Distinct();
         foreach (var interactable in interactables)
         {
             try

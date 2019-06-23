@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class TriggerBehaviour : MonoBehaviour, IInteractable
+public class TriggerBehaviour : MonoBehaviour, IInteractable
 {
     public event Action<TriggerBehaviour, Character> OnTriggerFired;
 

@@ -8,6 +8,8 @@ public class CameraController : MonoBehaviour
     float _minSize;
     [SerializeField]
     float _maxSize;
+    [SerializeField]
+    float _sizeScale;
 
     float _zLevel;
     Camera _camera;
@@ -46,6 +48,7 @@ public class CameraController : MonoBehaviour
         var diffX = _camera.aspect * Mathf.Abs(maxX - minX);
         var diffY = Mathf.Abs(maxY - minY);
         var diff = Mathf.Max(diffX, diffY);
+        diff *= _sizeScale;
         _camera.orthographicSize = Mathf.Clamp(diff / 2, _minSize, _maxSize);
     }
 }

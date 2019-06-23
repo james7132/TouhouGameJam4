@@ -11,16 +11,17 @@ public abstract class TriggerListener : MonoBehaviour
 
     public IReadOnlyCollection<TriggerBehaviour> Triggers => _triggers;
 
-    void OnEnable() 
+    protected virtual void OnEnable() 
     {
         foreach (var trigger in _triggers) 
         {
             if (trigger == null) continue;
+            Debug.Log(trigger);
             trigger.OnTriggerFired += OnTriggerFiredImpl;
         }
     }
 
-    void OnDisable() 
+    protected virtual void OnDisable() 
     {
         foreach (var trigger in _triggers) 
         {
