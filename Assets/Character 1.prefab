@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148055093645821043}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.284, y: -0.162, z: 0}
+  m_LocalPosition: {x: -0.255, y: -0.162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1224722549673426915}
@@ -156,7 +156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2152852541481239253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001000002, y: -0.172, z: 0}
+  m_LocalPosition: {x: -0.068, y: -0.172, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1224722549673426915}
@@ -365,7 +365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4829680491104674698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.20799999, y: -0.25699994, z: 0}
+  m_LocalPosition: {x: -0.20799999, y: -0.257, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6285342527241759345}
@@ -875,8 +875,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalAxis: Horizontal
   _verticalAxis: Vertical
-  _interactionBoxSize: {x: 3, y: 3}
-  _interactionBoxOffset: {x: 0, y: 0}
+  _interactionBoxSize: {x: 1, y: 1.5}
+  _interactionBoxOffset: {x: 0.75, y: 0}
   _enabledOnSelect:
   - {fileID: 6339623294517487542}
   _movementAcc: 50
@@ -896,6 +896,7 @@ MonoBehaviour:
   _runningBool: Running
   _JumpStateInt: JumpState
   _turnAroundBool: Turn
+  _interactTrigger: Interact
   _speedFloatWarmupAcc: 3
   _speedFloatWarmupDec: 5
   _selectColor: {r: 1, g: 1, b: 1, a: 1}

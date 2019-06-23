@@ -100,7 +100,7 @@ public class Character : MonoBehaviour
         var result = Physics2D.Raycast(startPoint, raycastVector.normalized, raycastVector.magnitude, raycastMask);
         return result;
     }
-    
+
     void Awake()
     {
         _characterColliders = new HashSet<Collider2D>(GetComponentsInChildren<Collider2D>());
@@ -145,7 +145,6 @@ public class Character : MonoBehaviour
     {
         HandleMovement(_movement);
     }
-
 
     /// <summary>
     /// Moves the character in a particular direction.
@@ -205,7 +204,9 @@ public class Character : MonoBehaviour
     public void Interact()
     {
         Debug.Log($"{name} interacted.");
-        Vector2 center = ((Vector2)transform.position) + _interactionBoxOffset;
+        var offset = _interactionBoxOffset;
+        if (!FacingRight) offset.x *= -1;
+        Vector2 center = ((Vector2)transform.position) + offset;
         var interactables = Physics2D.OverlapBoxAll(center, _interactionBoxSize, 0)
                                      .Where(col => !_characterColliders.Contains(col))
                                      .SelectMany(col => col.GetComponentsInChildren<IInteractable>());
@@ -222,6 +223,13 @@ public class Character : MonoBehaviour
         }
 
         _rigAnimator.SetTrigger(_interactTrigger);
+    }
+
+    void OnDrawGizmos() {
+        var offset = _interactionBoxOffset;
+        if (!FacingRight) offset.x *= -1;
+        Vector2 center = ((Vector2)transform.position) + offset;
+        Gizmos.DrawWireCube(center, _interactionBoxSize);
     }
 
     public virtual void Select()

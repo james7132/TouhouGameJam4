@@ -423,8 +423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalAxis: Horizontal
   _verticalAxis: Vertical
-  _interactionBoxSize: {x: 3, y: 3}
-  _interactionBoxOffset: {x: 0, y: 0}
+  _interactionBoxSize: {x: 1, y: 0.35}
+  _interactionBoxOffset: {x: 0.5, y: 0}
   _enabledOnSelect:
   - {fileID: 5296203732975774020}
   _movementAcc: 50
@@ -444,6 +444,7 @@ MonoBehaviour:
   _runningBool: Running
   _JumpStateInt: JumpState
   _turnAroundBool: Turn
+  _interactTrigger: Interact
   _speedFloatWarmupAcc: 4
   _speedFloatWarmupDec: 5
   _selectColor: {r: 1, g: 1, b: 1, a: 1}
