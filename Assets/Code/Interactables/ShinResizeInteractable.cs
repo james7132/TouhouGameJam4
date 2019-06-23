@@ -12,27 +12,43 @@ public class ShinResizeInteractable : TriggerListener
     private float _sizeLevelUpMult = 2f;
     [SerializeField]
     private float _massLevelUpMult = 2f;
+    [SerializeField]
+    private float _lerpSizeSpeed = 20f;
+
+    private Vector3 goalScale;
+
+    private void Start()
+    {
+        goalScale = transform.localScale;
+    }
+
+    private void Update()
+    {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //    OnTriggerFired(null, null);
+        if (transform.localScale != goalScale)
+        {
+            transform.localScale = Vector3.MoveTowards(transform.localScale, goalScale, Time.deltaTime * _lerpSizeSpeed);
+        }
+    }
 
     protected override void OnTriggerFired(TriggerBehaviour trigger, Character source)
     {
-        var scale = transform.localScale;
         var rb2d = GetComponent<Rigidbody2D>();
         _currentSizeLevel++;
         if (_currentSizeLevel < _sizeLevels)
         {
-            scale *= _sizeLevelUpMult;
+            goalScale *= _sizeLevelUpMult;
             rb2d.mass *= _massLevelUpMult;
         }
         else
         {
             for (int i = 0; i < _sizeLevels - 1; i++)
             {
-                scale /= _sizeLevelUpMult;
+                goalScale /= _sizeLevelUpMult;
                 rb2d.mass /= _massLevelUpMult;
             }
             _currentSizeLevel = 0;
         }
-
-        transform.localScale = scale;
     }
 }

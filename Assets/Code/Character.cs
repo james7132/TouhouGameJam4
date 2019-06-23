@@ -52,6 +52,8 @@ public class Character : MonoBehaviour
     [SerializeField]
     private string _turnAroundBool = "Turn";
     [SerializeField]
+    private string _interactTrigger = "Interact";
+    [SerializeField]
     private float _speedFloatWarmupAcc = 2f;
     [SerializeField]
     private float _speedFloatWarmupDec = 5f;
@@ -198,6 +200,8 @@ public class Character : MonoBehaviour
                 Debug.LogException(e);
             }
         }
+
+        _rigAnimator.SetTrigger(_interactTrigger);
     }
 
     public virtual void Select()
